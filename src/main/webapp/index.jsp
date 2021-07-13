@@ -11,5 +11,6 @@
 <a href="hello-servlet">Hello Servlet</a>
 <a href="basic">Basic Servlet</a>
 <a href="journal">Dziennik</a>
+<a href="cookie">Ciastko</a>
 </body>
 </html>
