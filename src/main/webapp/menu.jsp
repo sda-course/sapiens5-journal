@@ -11,6 +11,7 @@
                 <li><a href="list?date=2021-07-12">Lista obecności 1</a></li>
                 <li><a href="list?date=2021-07-11">Lista obecności 2</a></li>
                 <li><a href="list?date=2021-07-09">Lista obecności 3</a></li>
+                <li><a href="list.jsp?date=2021-07-12">Lista w JSP z 2021-07-12</a></li>
                 <li><a href="grades">Oceny</a></li>
             </ul>
         </nav>
