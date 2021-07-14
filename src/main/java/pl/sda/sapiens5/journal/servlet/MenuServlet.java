@@ -1,5 +1,7 @@
 package pl.sda.sapiens5.journal.servlet;
 
+import pl.sda.sapiens5.journal.JournalRepository;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +17,8 @@ public class MenuServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        List<String> history = new ArrayList<>();
-        history.add("journal");
-        session.setAttribute("visited", history);
+        JournalRepository repository = JournalRepository.getInstance();
+        req.setAttribute("dates", repository.findAllDates());
         getServletContext().getRequestDispatcher("/menu.jsp").forward(req, resp);
     }
 }

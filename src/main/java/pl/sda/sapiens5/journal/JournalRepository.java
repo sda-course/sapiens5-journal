@@ -21,6 +21,10 @@ public enum JournalRepository {
                 Arrays.asList("Ala", "Ola", "Ewa", "Olaf"));
     }
 
+    public List<LocalDate> findAllDates(){
+        return new ArrayList<>(journalLists.keySet());
+    }
+
     public List<String> findByDate(LocalDate date){
         return journalLists.getOrDefault(date, Collections.emptyList());
     }
