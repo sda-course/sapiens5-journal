@@ -11,4 +11,9 @@
         <servlet-name>basic</servlet-name>
         <url-pattern>/basic</url-pattern>
     </servlet-mapping>
+    <listener>
+        <listener-class>
+            org.jboss.weld.environment.servlet.Listener
+        </listener-class>
+    </listener>
 </web-app>

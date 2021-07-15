@@ -1,18 +1,19 @@
-package pl.sda.sapiens5.journal;
+package pl.sda.sapiens5.journal.repository;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Singleton;
 import java.time.LocalDate;
 import java.util.*;
 
-public enum JournalRepository {
-    INSTANCE;
-
-    public static JournalRepository getInstance(){
-        return INSTANCE;
-    }
-
+@Singleton
+public class JournalRepositoryMem implements JournalRepository{
     private Map<LocalDate, List<String>> journalLists = new HashMap<>();
 
-    JournalRepository(){
+    public JournalRepositoryMem(){
+    }
+
+    @PostConstruct
+    private void post(){
         journalLists.put(LocalDate.of(2021, 7, 12),
                 Arrays.asList("Ala", "Ola", "Ewa"));
         journalLists.put(LocalDate.of(2021, 7, 11),
@@ -21,14 +22,17 @@ public enum JournalRepository {
                 Arrays.asList("Ala", "Ola", "Ewa", "Olaf"));
     }
 
+    @Override
     public List<LocalDate> findAllDates(){
         return new ArrayList<>(journalLists.keySet());
     }
 
+    @Override
     public List<String> findByDate(LocalDate date){
         return journalLists.getOrDefault(date, Collections.emptyList());
     }
 
+    @Override
     public void save(String[] names, LocalDate date){
         journalLists.put(date, Arrays.asList(names));
     }
