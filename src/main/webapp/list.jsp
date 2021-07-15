@@ -19,18 +19,20 @@
     <c:if test="${status.index % 2 == 0}">
         <tr style="color: red;">
             <td>${status.index + 1}</td>
-            <td>${name}</td>
+            <td>${fn:toUpperCase(fn:trim(name))}</td>
         </tr>
     </c:if>
     <c:if test="${status.index % 2 != 0}">
         <tr style="color: blue;">
             <td>${status.index + 1}</td>
-            <td>${name}</td>
+            <td>${fn:toUpperCase(fn:trim(name))}</td>
         </tr>
     </c:if>
 </c:forEach>
 </table>
 <h3>Liczba obecnych: ${count}</h3>
+<h3>Procent obecnych:
+    <fmt:formatNumber value="${count / 10}" type="percent" maxFractionDigits="1" minFractionDigits="1"/> </h3>
 </div>
 </body>
 </html>

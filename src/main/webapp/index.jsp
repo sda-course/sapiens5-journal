@@ -13,5 +13,6 @@
 <a href="journal">Dziennik</a>
 <a href="cookie">Ciastko</a>
 <a href="calculator.jsp?a=10&b=5&operator=add">Calculator</a>
+<a href="new-list-form.jsp">Dodaj nową listę</a>
 </body>
 </html>

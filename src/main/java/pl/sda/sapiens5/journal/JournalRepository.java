@@ -28,4 +28,8 @@ public enum JournalRepository {
     public List<String> findByDate(LocalDate date){
         return journalLists.getOrDefault(date, Collections.emptyList());
     }
+
+    public void save(String[] names, LocalDate date){
+        journalLists.put(date, Arrays.asList(names));
+    }
 }
