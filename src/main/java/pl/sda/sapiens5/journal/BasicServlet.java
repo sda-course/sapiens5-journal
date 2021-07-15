@@ -18,9 +18,9 @@ public class BasicServlet implements Servlet {
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         PrintWriter writer = servletResponse.getWriter();
-        writer.println("Hello from servlet!!");
         servletResponse.setContentType("text/html");
         servletResponse.setCharacterEncoding("UTF-8");
+        writer.println("Hello from servlet!!");
         writer.flush();
     }
 
